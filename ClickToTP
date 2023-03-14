@@ -1,0 +1,10 @@
+mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "Click to tp"
+tool.Activated:connect(function()
+local ps = mouse.Hit+Vector3.new(0,2.5,0)
+ps = CFrame.new(ps.X,ps.Y,ps.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = ps
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
